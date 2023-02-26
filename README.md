@@ -1,1 +1,1 @@
-# The-source-code-for-searching-RKD-Trails-of-Simeck-of-SIMON-and-SIMECK
+# The-source-code-for-searching-RKD-Trails-of-SIMON-and-SIMECK
