@@ -1,15 +1,4 @@
-# The-source-code-for-searching-RKD-Trails-of-SIMON-and-SIMECK
-There are 4 files in this repository：  
-* Simeck32_64_Valid_RKD_Cryptanalysis.cpp
-* Simeck48_96_Valid_RKD_Cryptanalysis.cpp
-* Simeck64_128_Valid_RKD_Cryptanalysis.cpp  
-* Simon128_256_Valid_RKD_Cryptanalysis.cpp
-# Instructions for Execution 
-For example, to search for a valid RKD trails with a Hamming weight of 30 in 14 rounds for simeck32, you can execute the program according to the following command to obtain：
-
-```C++ simeck32-valid-RKD-trail.cpp -o a```  
-```./a 14 30 >14-30.smt2```  
-```time bitwuzla --hex 14-30.smt2 >14-30.txt```
-  
-   
-*Simeck48_96_Valid_RKD_Cryptanalysis.cpp*, *Simeck64_128_Valid_RKD_Cryptanalysis.cpp* and *Simon128_256_Valid_RKD_Cryptanalysis.cpp* operate like *Simeck32_64_Valid_RKD_Cryptanalysis.cpp*
+# SIMON-like_RKD_Cryptanalysis
+**`Title`**：Related-key Differential Cryptanalysis of SIMON and SIMECK  
+**`Author`**: Anonymous Submission   
+**`Abstract`**： Although the differential behavior of SIMON and SIMECK has been extensively studied in the single-key scenario, their security against related-key attacks remains insufficiently understood. In this paper, we investigate the related-key differential (RKD) characteristics of SIMON and SIMECK. We first find that the previously reported RKD characteristics for these ciphers under the Markov cipher assumption may not always be valid. To address this issue, we develop an SMT model capable of finding good RKD characteristics and extracting the right pairs to ensure validity. Our model successfully reproduces the best RKD characteristics reported for SIMECK and generates full-round RKD characteristics for SIMECK48/96 and SIMECK64/128, as well as extended RKD characteristics for SIMECK32/64. Additionally, we present optimal rotational-XOR characteristics for SIMECK32/64, 48/96, and 64/128, covering 24, 35, and full rounds, respectively. Although these characteristics are only effective for certain key sets, their existence indicates undesirable properties of the design, contradicting the designers' claims about SIMECK's good cryptographic properties in the related-key scenario. We then analyze the related-key characteristics of SIMON. The analysis requires significantly more computational resources and is more challenging than the corresponding analysis for SIMECK. Thus, we incorporate manually explored information into our model. For SIMON2n/4n, we used iterative key differences to construct up to 19-round optimal iterative differences, which are the most effective distinguishers against SIMON32/64 and SIMON48/96. For cases where iterative differences are ineffective, we employed a combination of short-round distinguishers to obtain longer ones. Consequently, our paper presents the current longest valid distinguishers for all ten variants of SIMON in the related-key scenario. Finally, we investigate the influence of the rotation parameters on related-key differential attacks for SIMECK. Our experiments show that replacing the rotation parameters does not significantly improve its resistance against related-key differential attacks. On the other hand, we demonstrate that the resistance can be substantially enhanced without imposing computationally expensive operational burdens while retaining the lightweight structure of SIMECK.
